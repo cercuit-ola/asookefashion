@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Grotesk:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:#F4EFE8}
+  ::selection{background:#5E1B24;color:#F4EFE8}
+  input::placeholder{color:rgba(27,21,18,0.4)}
+</style>
+<script src="./products.js"></script>
+</helmet>
+
+<div style="background:#F4EFE8;color:#1B1512;font-family:'Space Grotesk',sans-serif;overflow-x:hidden;position:relative;min-height:100vh">
+
+  <!-- header -->
+  <header style="position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:20px 40px;background:rgba(244,239,232,0.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(27,21,18,0.12)">
+    <div style="flex:1;display:flex;gap:26px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase">
+      <a href="Shop.dc.html" style="color:#1B1512;text-decoration:none">Shop</a>
+      <a href="About.dc.html" style="color:#1B1512;text-decoration:none">About</a>
+      <a href="Privacy.dc.html" style="color:#1B1512;text-decoration:none">Privacy</a>
+    </div>
+    <a href="Asooke Store.dc.html" style="flex:0 0 auto;text-decoration:none;color:#1B1512;font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;letter-spacing:.34em;padding-left:.34em">ASŌKE</a>
+    <div style="flex:1;display:flex;gap:22px;justify-content:flex-end;align-items:center;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase">
+      <a href="Shop.dc.html" style="text-decoration:none;color:#5E1B24;font-weight:700">Continue shopping →</a>
+    </div>
+  </header>
+
+  <!-- PLACED success -->
+  <sc-if value="{{ placed }}" hint-placeholder-val="{{ false }}">
+    <section style="max-width:640px;margin:0 auto;padding:14vh 40px;text-align:center;min-height:70vh">
+      <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.28em;color:#A6773B;text-transform:uppercase">Order received</div>
+      <h1 style="margin:18px 0 0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(40px,6vw,72px);line-height:1">Ẹ ṣé púpọ̀.<br>Thank you.</h1>
+      <p style="max-width:460px;margin:24px auto 0;font-size:15px;line-height:1.8;color:rgba(27,21,18,0.72)">Your order is confirmed. You’ll be redirected to NOWPayments to complete the {{ coin }} payment. Your pieces are made to order and ship within about three weeks.</p>
+      <div style="margin:34px auto 0;max-width:380px;border:1px solid rgba(27,21,18,0.18);padding:22px 24px;text-align:left;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.04em;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;justify-content:space-between"><span style="color:rgba(27,21,18,0.55)">ORDER</span><span>{{ orderRef }}</span></div>
+        <div style="display:flex;justify-content:space-between"><span style="color:rgba(27,21,18,0.55)">TOTAL</span><span>{{ paidTotal }}</span></div>
+        <div style="display:flex;justify-content:space-between"><span style="color:rgba(27,21,18,0.55)">METHOD</span><span>{{ coin }} · NOWPayments</span></div>
+      </div>
+      <div style="display:flex;gap:14px;justify-content:center;margin-top:34px">
+        <a href="Shop.dc.html" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#F4EFE8;background:#1B1512;padding:15px 26px;text-decoration:none">Keep shopping</a>
+        <a href="https://wa.me/3816357931" target="_blank" rel="noopener" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#1B1512;text-decoration:none;border-bottom:1px solid #1B1512;padding-bottom:3px;align-self:center">WhatsApp us</a>
+      </div>
+    </section>
+  </sc-if>
+
+  <!-- CART (when not placed) -->
+  <sc-if value="{{ showCart }}" hint-placeholder-val="{{ true }}">
+    <section style="padding:60px 40px 100px">
+      <h1 style="margin:0 0 8px;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(40px,6vw,80px);line-height:.95">Your bag</h1>
+      <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;color:#A6773B;text-transform:uppercase;margin-bottom:44px">{{ countLabel }} · made to order · ships in ~3 weeks</div>
+
+      <sc-if value="{{ empty }}" hint-placeholder-val="{{ false }}">
+        <div style="border-top:1px solid rgba(27,21,18,0.14);padding:60px 0;text-align:center">
+          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:28px;margin:0 0 20px">Your bag is empty.</p>
+          <a href="Shop.dc.html" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#F4EFE8;background:#1B1512;padding:15px 26px;text-decoration:none">Browse the collection →</a>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ hasItems }}" hint-placeholder-val="{{ false }}">
+        <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start">
+          <!-- items -->
+          <div style="display:flex;flex-direction:column">
+            <sc-for list="{{ items }}" as="it" hint-placeholder-count="0">
+              <div style="display:flex;gap:20px;padding:24px 0;border-top:1px solid rgba(27,21,18,0.14)">
+                <div style="width:88px;height:112px;flex:0 0 auto;overflow:hidden;background:{{ it.bg }}">
+                  <sc-if value="{{ it.isImg }}" hint-placeholder-val="{{ false }}">
+                    <img src="{{ it.img }}" alt="{{ it.name }}" style="width:100%;height:100%;object-fit:cover;object-position:{{ it.pos }}">
+                  </sc-if>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column">
+                  <div style="display:flex;justify-content:space-between;gap:14px">
+                    <h3 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px">{{ it.name }}</h3>
+                    <span style="font-family:'Space Mono',monospace;font-size:13px;white-space:nowrap">{{ it.lineStr }}</span>
+                  </div>
+                  <span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(27,21,18,0.5);text-transform:uppercase;margin-top:6px">Size {{ it.size }} · {{ it.priceStr }} each</span>
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:16px">
+                    <div style="display:flex;align-items:center;border:1px solid rgba(27,21,18,0.3)">
+                      <button onClick="{{ it.dec }}" style="width:36px;height:36px;background:none;border:none;cursor:pointer;font-family:'Space Mono',monospace;font-size:16px">−</button>
+                      <span style="width:34px;text-align:center;font-family:'Space Mono',monospace;font-size:13px">{{ it.qty }}</span>
+                      <button onClick="{{ it.inc }}" style="width:36px;height:36px;background:none;border:none;cursor:pointer;font-family:'Space Mono',monospace;font-size:16px">+</button>
+                    </div>
+                    <button onClick="{{ it.remove }}" style="background:none;border:none;cursor:pointer;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(27,21,18,0.55)">Remove ✕</button>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+
+          <!-- summary + payment -->
+          <div style="position:sticky;top:100px;background:#5E1B24;color:#F4EFE8;padding:36px 32px">
+            <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#C89A55;margin-bottom:24px">Order summary</div>
+            <div style="display:flex;flex-direction:column;gap:14px;font-family:'Space Mono',monospace;font-size:13px">
+              <div style="display:flex;justify-content:space-between"><span style="color:rgba(244,239,232,0.7)">Subtotal</span><span>{{ subtotalStr }}</span></div>
+              <div style="display:flex;justify-content:space-between"><span style="color:rgba(244,239,232,0.7)">Shipping</span><span>Free · worldwide</span></div>
+              <div style="display:flex;justify-content:space-between"><span style="color:rgba(244,239,232,0.7)">Lead time</span><span>~3 weeks</span></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid rgba(244,239,232,0.24);margin-top:20px;padding-top:18px">
+              <span style="font-family:'Cormorant Garamond',serif;font-size:24px">Total</span>
+              <span style="font-family:'Space Mono',monospace;font-size:20px">{{ subtotalStr }}</span>
+            </div>
+
+            <!-- fields -->
+            <div style="display:flex;flex-direction:column;gap:12px;margin-top:26px">
+              <input value="{{ nameVal }}" onInput="{{ onName }}" placeholder="Full name" style="background:rgba(244,239,232,0.08);border:1px solid rgba(244,239,232,0.28);color:#F4EFE8;padding:13px 14px;font-family:'Space Mono',monospace;font-size:12px;outline:none">
+              <input value="{{ emailVal }}" onInput="{{ onEmail }}" placeholder="Email for order updates" style="background:rgba(244,239,232,0.08);border:1px solid rgba(244,239,232,0.28);color:#F4EFE8;padding:13px 14px;font-family:'Space Mono',monospace;font-size:12px;outline:none">
+            </div>
+
+            <!-- crypto -->
+            <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#C89A55;margin:26px 0 12px">Pay with crypto</div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+              <sc-for list="{{ coins }}" as="c" hint-placeholder-count="6">
+                <button onClick="{{ c.onClick }}" style="padding:11px 6px;cursor:pointer;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.06em;background:{{ c.bg }};color:{{ c.color }};border:1px solid rgba(244,239,232,0.4)">{{ c.label }}</button>
+              </sc-for>
+            </div>
+
+            <button onClick="{{ placeOrder }}" style="width:100%;margin-top:22px;background:#F4EFE8;color:#1B1512;border:none;cursor:pointer;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:17px">Place order — pay with {{ coin }} →</button>
+            <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.04em;color:rgba(244,239,232,0.55);margin-top:12px;line-height:1.6">Secured by NOWPayments. You’ll be redirected to complete payment in your chosen coin. No card required.</div>
+          </div>
+        </div>
+      </sc-if>
+    </section>
+  </sc-if>
+
+  <!-- footer -->
+  <footer style="background:#1B1512;color:#F4EFE8;padding:70px 40px 40px">
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,232,0.55)">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.26em;color:#F4EFE8">ASOKE FASHION</span>
+      <div style="display:flex;gap:26px;flex-wrap:wrap">
+        <a href="Shop.dc.html" style="color:inherit;text-decoration:none">Shop</a>
+        <a href="Privacy.dc.html" style="color:inherit;text-decoration:none">Privacy Policy</a>
+        <a href="https://wa.me/3816357931" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">WhatsApp</a>
+      </div>
+      <span>© 2026 Asoke Fashion — Lagos</span>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/3816357931" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" style="position:fixed;right:22px;bottom:22px;z-index:200;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 26px rgba(0,0,0,0.3)">
+    <svg width="30" height="30" viewBox="0 0 32 32" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9.9.9-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.3C4.9 9.5 9.9 4.9 16 4.9S27.1 9.5 27.1 15 22.1 24.8 16 24.8zm5.8-7.3c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.6c.2.2 2.5 3.8 6 5.3.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>
+  </a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:1000}}">
+class Component extends DCLogic {
+  state = { ready: false, tick: 0, name: '', email: '', coin: 'USDT', placed: false, orderRef: '', paidTotal: '' };
+
+  componentDidMount() {
+    const boot = () => { this.m = window.ASOOKE; this.setState({ ready: true }); };
+    if (window.ASOOKE) boot(); else window.addEventListener('asooke-ready', boot, { once: true });
+  }
+
+  bump() { this.setState(s => ({ tick: s.tick + 1 })); }
+  incItem(id, size) { this.m.setQty(id, size, this._qty(id, size) + 1); this.bump(); }
+  decItem(id, size) { this.m.setQty(id, size, this._qty(id, size) - 1); this.bump(); }
+  removeItem(id, size) { this.m.removeItem(id, size); this.bump(); }
+  _qty(id, size) { const it = this.m.getCart().find(i => i.id === id && i.size === size); return it ? it.qty : 1; }
+  setCoin(c) { this.setState({ coin: c }); }
+
+  placeOrder() {
+    if (!this.m || this.m.cartCount() === 0) return;
+    const total = this.m.money(this.m.cartTotal());
+    const ref = 'ASO-' + Math.random().toString(36).slice(2, 7).toUpperCase();
+    this.m.clearCart();
+    this.setState({ placed: true, orderRef: ref, paidTotal: total });
+    window.scrollTo(0, 0);
+  }
+
+  renderVals() {
+    const m = this.m;
+    const detailed = m ? m.cartDetailed() : [];
+    const count = m ? m.cartCount() : 0;
+    const items = detailed.map(i => ({
+      name: i.product.name, size: i.size, qty: i.qty, bg: i.product.bg,
+      img: i.product.img || '', pos: i.product.pos || 'center', isImg: !!i.product.img,
+      priceStr: m.money(i.product.price), lineStr: m.money(i.product.price * i.qty),
+      inc: () => this.incItem(i.id, i.size), dec: () => this.decItem(i.id, i.size), remove: () => this.removeItem(i.id, i.size),
+    }));
+    const coins = ['BTC', 'ETH', 'USDT', 'USDC', 'BNB', 'SOL'].map(label => {
+      const sel = this.state.coin === label;
+      return { label, bg: sel ? '#F4EFE8' : 'transparent', color: sel ? '#5E1B24' : '#F4EFE8', onClick: () => this.setCoin(label) };
+    });
+    return {
+      placed: this.state.placed,
+      showCart: !this.state.placed,
+      empty: this.state.ready && count === 0,
+      hasItems: count > 0,
+      items, coins,
+      countLabel: count + (count === 1 ? ' piece' : ' pieces'),
+      subtotalStr: m ? m.money(m.cartTotal()) : '$0',
+      coin: this.state.coin,
+      orderRef: this.state.orderRef,
+      paidTotal: this.state.paidTotal,
+      nameVal: this.state.name, emailVal: this.state.email,
+      onName: (e) => this.setState({ name: e.target.value }),
+      onEmail: (e) => this.setState({ email: e.target.value }),
+      placeOrder: () => this.placeOrder(),
+    };
+  }
+}
+</script>
+</body>
+</html>
