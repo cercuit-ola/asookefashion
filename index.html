@@ -11,6 +11,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Grotesk:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<title>ASOOKE FASHION | Nigeria best Asooke designer weaving outlet</title>
+<meta name="description" content="Shop handwoven Asooke fashion — premium two-piece sets, kaftans, agbada, and bridal wear. Authentic Nigerian craftsmanship, worldwide delivery.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+
 <style>
   *{box-sizing:border-box}
   html,body{margin:0}
@@ -19,6 +24,30 @@
   @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   @keyframes bigroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   image-slot{display:block;width:100%;height:100%}
+  @media (max-width:820px){
+    .hdr{padding:13px 16px !important}
+    .nav-left{gap:14px !important;font-size:9.5px !important}
+    .nav-left a.hide-sm{display:none !important}
+    .nav-right{gap:13px !important;font-size:9.5px !important}
+    .nav-right .hide-sm{display:none !important}
+    .logo{font-size:13px !important;letter-spacing:.03em !important;padding-left:0 !important}
+    .hero{min-height:auto !important;flex-direction:column !important;display:flex !important}
+    .hero-panel{display:none !important}
+    .hero-text{width:100% !important;padding:44px 16px 8px !important}
+    .hero-img{position:relative !important;right:auto !important;bottom:auto !important;width:100% !important;height:auto !important;box-shadow:none !important;margin-top:24px}
+    .hero-vert,.hero-coord{display:none !important}
+    .grid-3{grid-template-columns:1fr !important;gap:44px !important}
+    .feat-card{margin-top:0 !important}
+    .split{grid-template-columns:1fr !important;min-height:auto !important}
+    .split-img{min-height:92vw !important}
+    .split-text{padding:48px 22px !important}
+    .grid-12{grid-template-columns:1fr 1fr !important;gap:16px 14px !important}
+    .shop-item{grid-column:auto !important;margin-top:0 !important}
+    .sec{padding:64px 16px 32px !important}
+    .foot{padding:56px 16px 30px !important}
+    .foot-news{grid-template-columns:1fr !important;gap:26px !important}
+    .marq{font-size:52px !important}
+  }
 </style>
 <script src="./products.js"></script>
 </helmet>
@@ -34,29 +63,29 @@
   </div>
 
   <!-- header -->
-  <header style="position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:20px 40px;background:rgba(244,239,232,0.82);backdrop-filter:blur(10px);border-bottom:1px solid rgba(27,21,18,0.12)">
-    <div style="flex:1;display:flex;gap:26px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase">
+  <header class="hdr" style="position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:20px 40px;background:rgba(244,239,232,0.82);backdrop-filter:blur(10px);border-bottom:1px solid rgba(27,21,18,0.12)">
+    <div class="nav-left" style="flex:1;display:flex;gap:26px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase">
       <a href="Shop.dc.html" style="color:#1B1512;text-decoration:none">Shop</a>
       <a href="About.dc.html" style="color:#1B1512;text-decoration:none">About</a>
-      <a href="Shop.dc.html" style="color:#1B1512;text-decoration:none">Aṣọ Òkè</a>
-      <a href="#story" style="color:#1B1512;text-decoration:none">Lookbook</a>
+      <a href="Shop.dc.html" class="hide-sm" style="color:#1B1512;text-decoration:none">Aṣọ Òkè</a>
+      <a href="#story" class="hide-sm" style="color:#1B1512;text-decoration:none">Lookbook</a>
     </div>
-    <a href="#top" style="flex:0 0 auto;text-decoration:none;color:#1B1512;font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;letter-spacing:.34em;padding-left:.34em">ASŌKE</a>
-    <div style="flex:1;display:flex;gap:22px;justify-content:flex-end;align-items:center;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase">
-      <span style="cursor:pointer">Search</span>
-      <span style="cursor:pointer;color:rgba(27,21,18,0.55)">Account</span>
+    <a href="#top" class="logo" style="flex:0 0 auto;text-decoration:none;color:#1B1512;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:.1em;padding-left:0;white-space:nowrap">ASOKE FASHION</a>
+    <div class="nav-right" style="flex:1;display:flex;gap:22px;justify-content:flex-end;align-items:center;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase">
+      <span class="hide-sm" style="cursor:pointer">Search</span>
+      <span class="hide-sm" style="cursor:pointer;color:rgba(27,21,18,0.55)">Account</span>
       <a href="Checkout.dc.html" style="text-decoration:none;color:#5E1B24;font-weight:700">Bag ({{ bagCount }})</a>
     </div>
   </header>
 
   <!-- HERO -->
-  <section id="top" style="position:relative;min-height:90vh;display:flex;align-items:stretch;overflow:hidden">
+  <section id="top" class="hero" style="position:relative;min-height:90vh;display:flex;align-items:stretch;overflow:hidden">
     <!-- wine panel right -->
-    <div style="position:absolute;top:0;right:0;bottom:0;width:41%;background:#5E1B24"></div>
-    <div style="position:absolute;top:0;right:41%;bottom:0;width:1px;background:rgba(27,21,18,0.12)"></div>
+    <div class="hero-panel" style="position:absolute;top:0;right:0;bottom:0;width:41%;background:#5E1B24"></div>
+    <div class="hero-panel" style="position:absolute;top:0;right:41%;bottom:0;width:1px;background:rgba(27,21,18,0.12)"></div>
 
     <!-- left text -->
-    <div style="position:relative;z-index:3;width:56%;padding:11vh 0 6vh 40px;display:flex;flex-direction:column;justify-content:center">
+    <div class="hero-text" style="position:relative;z-index:3;width:56%;padding:11vh 0 6vh 40px;display:flex;flex-direction:column;justify-content:center">
       <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.28em;color:#A6773B;text-transform:uppercase;margin-bottom:26px">AṢỌ ÒKÈ · EST. HERITAGE · N&deg; 001</div>
       <h1 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(52px,7vw,104px);line-height:.92;margin:0;letter-spacing:-0.01em">
 Aso Ofi Threads<br>that <span style="font-style:italic;color:#5E1B24">remember</span><br>the occasion.
@@ -74,26 +103,26 @@ Aso Ofi Threads<br>that <span style="font-style:italic;color:#5E1B24">remember</
     </div>
 
     <!-- image straddling -->
-    <img src="assets/model-maroon.png" alt="Maroon Aso Oke two-piece" style="position:absolute;z-index:2;right:6%;bottom:0;width:34%;height:82%;object-fit:cover;object-position:center top;box-shadow:-30px 30px 60px rgba(0,0,0,0.28)">
+    <img src="assets/model-maroon.png" alt="Maroon Aso Oke two-piece" class="hero-img" style="position:absolute;z-index:2;right:6%;bottom:0;width:34%;height:82%;object-fit:cover;object-position:center top;box-shadow:-30px 30px 60px rgba(0,0,0,0.28)">
 
     <!-- vertical label -->
-    <div style="position:absolute;z-index:4;right:26px;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.3em;color:rgba(244,239,232,0.85);text-transform:uppercase">The Ìlà Collection — Autumn / Winter 26</div>
+    <div class="hero-vert" style="position:absolute;z-index:4;right:26px;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.3em;color:rgba(244,239,232,0.85);text-transform:uppercase">The Ìlà Collection — Autumn / Winter 26</div>
 
     <!-- corner coords -->
-    <div style="position:absolute;z-index:4;left:40px;bottom:34px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(27,21,18,0.5)">06.45&deg;N · 03.40&deg;E — LAGOS LOOM</div>
-    <div style="position:absolute;z-index:4;right:40px;bottom:34px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(244,239,232,0.7)">SCROLL ↓</div>
+    <div class="hero-coord" style="position:absolute;z-index:4;left:40px;bottom:34px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(27,21,18,0.5)">06.45&deg;N · 03.40&deg;E — LAGOS LOOM</div>
+    <div class="hero-coord" style="position:absolute;z-index:4;right:40px;bottom:34px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(244,239,232,0.7)">SCROLL ↓</div>
   </section>
 
   <!-- FEATURED / THE WEAVE -->
-  <section id="weave" style="padding:120px 40px 40px">
+  <section id="weave" class="sec" style="padding:120px 40px 40px">
     <div style="display:flex;align-items:flex-end;justify-content:space-between;border-bottom:1px solid rgba(27,21,18,0.14);padding-bottom:22px;margin-bottom:60px">
       <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.2em;color:#A6773B">02 — THE WEAVE</div>
       <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(30px,4vw,52px);line-height:1">Featured pieces</h2>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:36px;align-items:start">
+    <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:36px;align-items:start">
       <!-- card f1 real -->
-      <article style="display:flex;flex-direction:column;transition:transform .4s ease" style-hover="transform:translateY(-6px)">
+      <article class="feat-card" style="display:flex;flex-direction:column;transition:transform .4s ease" style-hover="transform:translateY(-6px)">
         <div style="position:relative;overflow:hidden;background:#5E1B24;aspect-ratio:3/4">
           <img src="assets/model-maroon.png" alt="Wine wide-leg set" style="width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .8s ease" style-hover="transform:scale(1.05)">
           <div style="position:absolute;top:14px;left:14px;background:#F4EFE8;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;padding:5px 9px;text-transform:uppercase">New</div>
@@ -110,7 +139,7 @@ Aso Ofi Threads<br>that <span style="font-style:italic;color:#5E1B24">remember</
       </article>
 
       <!-- card f2 slot, staggered down -->
-      <article style="display:flex;flex-direction:column;margin-top:56px">
+      <article class="feat-card" style="display:flex;flex-direction:column;margin-top:56px">
         <div style="position:relative;overflow:hidden;aspect-ratio:3/4">
           <img src="assets/ade-gele.png" alt="Adé Gèlè Headwrap" style="width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .8s ease" style-hover="transform:scale(1.05)">
           <span onClick="{{ ui.f2.toggle }}" style="position:absolute;top:12px;right:14px;cursor:pointer;font-size:18px;line-height:1;z-index:5;color:{{ ui.f2.heart }}">♥</span>
@@ -126,7 +155,7 @@ Aso Ofi Threads<br>that <span style="font-style:italic;color:#5E1B24">remember</
       </article>
 
       <!-- card f3 real pink -->
-      <article style="display:flex;flex-direction:column;margin-top:24px">
+      <article class="feat-card" style="display:flex;flex-direction:column;margin-top:24px">
         <div style="position:relative;overflow:hidden;background:#7d1e46;aspect-ratio:3/4">
           <img src="assets/model-pink.png" alt="Magenta Aso Oke agbada" style="width:100%;height:100%;object-fit:cover;object-position:left center;transition:transform .8s ease" style-hover="transform:scale(1.05)">
           <span onClick="{{ ui.f3.toggle }}" style="position:absolute;top:12px;right:14px;cursor:pointer;font-size:18px;line-height:1;color:{{ ui.f3.heart }}">♥</span>
@@ -144,11 +173,11 @@ Aso Ofi Threads<br>that <span style="font-style:italic;color:#5E1B24">remember</
   </section>
 
   <!-- EDITORIAL SPLIT -->
-  <section id="story" style="display:grid;grid-template-columns:1fr 1fr;margin-top:120px;background:#5E1B24;color:#F4EFE8;min-height:80vh">
-    <div style="position:relative;overflow:hidden;min-height:60vh">
+  <section id="story" class="split" style="display:grid;grid-template-columns:1fr 1fr;margin-top:120px;background:#5E1B24;color:#F4EFE8;min-height:80vh">
+    <div class="split-img" style="position:relative;overflow:hidden;min-height:60vh">
       <img src="assets/model-pink.png" alt="Aso Oke lookbook" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
     </div>
-    <div style="display:flex;flex-direction:column;justify-content:center;padding:9vh 7vw">
+    <div class="split-text" style="display:flex;flex-direction:column;justify-content:center;padding:9vh 7vw">
       <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.28em;color:#C89A55;text-transform:uppercase;margin-bottom:34px">03 — The Manifesto</div>
       <blockquote style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-style:italic;font-size:clamp(30px,3.6vw,50px);line-height:1.15">
         “Every stripe is a sentence in a language of celebration — read from the selvedge to the hem.”
@@ -161,15 +190,15 @@ Aso Ofi Threads<br>that <span style="font-style:italic;color:#5E1B24">remember</
   </section>
 
   <!-- SHOP GRID (asymmetric) -->
-  <section id="shop" style="padding:120px 40px 60px">
+  <section id="shop" class="sec" style="padding:120px 40px 60px">
     <div style="display:flex;align-items:flex-end;justify-content:space-between;border-bottom:1px solid rgba(27,21,18,0.14);padding-bottom:22px;margin-bottom:52px">
       <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(30px,4vw,52px);line-height:1">New arrivals</h2>
       <a href="Shop.dc.html" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.2em;color:#A6773B;text-decoration:none">04 — SHOP ALL (15) →</a>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:28px;grid-auto-flow:dense">
+    <div class="grid-12" style="display:grid;grid-template-columns:repeat(12,1fr);gap:28px;grid-auto-flow:dense">
       <!-- big tile -->
-      <article style="grid-column:span 5;display:flex;flex-direction:column">
+      <article class="shop-item" style="grid-column:span 5;display:flex;flex-direction:column">
         <div style="position:relative;aspect-ratio:4/5;overflow:hidden">
           <img src="assets/ade-gele.png" alt="Etù Wrap Skirt Set" style="width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .8s ease" style-hover="transform:scale(1.05)">
         </div>
@@ -181,7 +210,7 @@ Aso Ofi Threads<br>that <span style="font-style:italic;color:#5E1B24">remember</
       </article>
 
       <!-- two stacked small -->
-      <article style="grid-column:span 4;display:flex;flex-direction:column">
+      <article class="shop-item" style="grid-column:span 4;display:flex;flex-direction:column">
         <div style="position:relative;aspect-ratio:1/1;overflow:hidden;background:#5E1B24">
           <img src="assets/model-maroon.png" alt="detail" style="width:100%;height:100%;object-fit:cover;object-position:top center">
         </div>
@@ -192,7 +221,7 @@ Aso Ofi Threads<br>that <span style="font-style:italic;color:#5E1B24">remember</
         <span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(27,21,18,0.5);text-transform:uppercase;margin-top:8px">Gold pin detail</span>
       </article>
 
-      <article style="grid-column:span 3;display:flex;flex-direction:column;margin-top:70px">
+      <article class="shop-item" style="grid-column:span 3;display:flex;flex-direction:column;margin-top:70px">
         <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
           <img src="assets/coral-rope.png" alt="Coral Bead Rope" style="width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .8s ease" style-hover="transform:scale(1.05)">
         </div>
@@ -203,7 +232,7 @@ Aso Ofi Threads<br>that <span style="font-style:italic;color:#5E1B24">remember</
         <span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(27,21,18,0.5);text-transform:uppercase;margin-top:8px">Accessory</span>
       </article>
 
-      <article style="grid-column:span 4;display:flex;flex-direction:column">
+      <article class="shop-item" style="grid-column:span 4;display:flex;flex-direction:column">
         <div style="position:relative;aspect-ratio:3/4;overflow:hidden;background:#7d1e46">
           <img src="assets/model-pink.png" alt="magenta agbada short" style="width:100%;height:100%;object-fit:cover;object-position:right center">
         </div>
@@ -214,7 +243,7 @@ Aso Ofi Threads<br>that <span style="font-style:italic;color:#5E1B24">remember</
         <span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(27,21,18,0.5);text-transform:uppercase;margin-top:8px">Gèlè included</span>
       </article>
 
-      <article style="grid-column:span 4;display:flex;flex-direction:column;margin-top:-40px">
+      <article class="shop-item" style="grid-column:span 4;display:flex;flex-direction:column;margin-top:-40px">
         <div style="position:relative;aspect-ratio:4/5;overflow:hidden">
           <img src="assets/sanyan-bridal.png" alt="Sáńyán Ivory Bridal Set" style="width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .8s ease" style-hover="transform:scale(1.05)">
         </div>
@@ -229,14 +258,14 @@ Aso Ofi Threads<br>that <span style="font-style:italic;color:#5E1B24">remember</
 
   <!-- BIG MARQUEE -->
   <section style="border-top:1px solid rgba(27,21,18,0.14);border-bottom:1px solid rgba(27,21,18,0.14);overflow:hidden;padding:34px 0;background:#F4EFE8">
-    <div style="display:inline-block;white-space:nowrap;animation:bigroll 40s linear infinite;font-family:'Cormorant Garamond',serif;font-size:clamp(48px,9vw,120px);line-height:1;font-weight:500">
+    <div class="marq" style="display:inline-block;white-space:nowrap;animation:bigroll 40s linear infinite;font-family:'Cormorant Garamond',serif;font-size:clamp(48px,9vw,120px);line-height:1;font-weight:500">
       <span style="padding:0 30px">AṢỌ ÒKÈ</span><span style="color:#5E1B24;padding:0 30px">✳</span><span style="-webkit-text-stroke:1px #1B1512;color:transparent;padding:0 30px">WOVEN HERITAGE</span><span style="color:#5E1B24;padding:0 30px">✳</span><span style="padding:0 30px">AṢỌ ÒKÈ</span><span style="color:#5E1B24;padding:0 30px">✳</span><span style="-webkit-text-stroke:1px #1B1512;color:transparent;padding:0 30px">WOVEN HERITAGE</span><span style="color:#5E1B24;padding:0 30px">✳</span>
     </div>
   </section>
 
   <!-- NEWSLETTER + FOOTER -->
-  <footer style="background:#1B1512;color:#F4EFE8;padding:90px 40px 40px">
-    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:end;border-bottom:1px solid rgba(244,239,232,0.16);padding-bottom:64px">
+  <footer class="foot" style="background:#1B1512;color:#F4EFE8;padding:90px 40px 40px">
+    <div class="foot-news" style="display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:end;border-bottom:1px solid rgba(244,239,232,0.16);padding-bottom:64px">
       <div>
         <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,5vw,68px);line-height:1">Join the atelier list.</h2>
         <p style="max-width:420px;margin:20px 0 0;font-size:14px;line-height:1.7;color:rgba(244,239,232,0.6)">First look at every drop, weaver stories, and made-to-order openings.</p>

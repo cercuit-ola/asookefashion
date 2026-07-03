@@ -11,12 +11,28 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Grotesk:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<title>Checkout | Asooke Fashion</title>
+<meta name="description" content="Complete your Asooke Fashion order — pay securely with crypto via NOWPayments.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+
 <style>
   *{box-sizing:border-box}
   html,body{margin:0}
   body{background:#F4EFE8}
   ::selection{background:#5E1B24;color:#F4EFE8}
   input::placeholder{color:rgba(27,21,18,0.4)}
+  @media (max-width:820px){
+    .hdr{padding:13px 16px !important}
+    .nav-left{gap:14px !important;font-size:9.5px !important}
+    .nav-left a.hide-sm{display:none !important}
+    .nav-right{gap:13px !important;font-size:9.5px !important}
+    .logo{font-size:13px !important;letter-spacing:.03em !important;padding-left:0 !important}
+    .cart-sec{padding:40px 16px 72px !important}
+    .cart-grid{grid-template-columns:1fr !important;gap:30px !important}
+    .summary{position:relative !important;top:0 !important;padding:28px 20px !important}
+    .foot{padding:52px 16px 30px !important}
+  }
 </style>
 <script src="./products.js"></script>
 </helmet>
@@ -24,13 +40,13 @@
 <div style="background:#F4EFE8;color:#1B1512;font-family:'Space Grotesk',sans-serif;overflow-x:hidden;position:relative;min-height:100vh">
 
   <!-- header -->
-  <header style="position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:20px 40px;background:rgba(244,239,232,0.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(27,21,18,0.12)">
-    <div style="flex:1;display:flex;gap:26px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase">
+  <header class="hdr" style="position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:20px 40px;background:rgba(244,239,232,0.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(27,21,18,0.12)">
+    <div class="nav-left" style="flex:1;display:flex;gap:26px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase">
       <a href="Shop.dc.html" style="color:#1B1512;text-decoration:none">Shop</a>
-      <a href="About.dc.html" style="color:#1B1512;text-decoration:none">About</a>
-      <a href="Privacy.dc.html" style="color:#1B1512;text-decoration:none">Privacy</a>
+      <a href="About.dc.html" class="hide-sm" style="color:#1B1512;text-decoration:none">About</a>
+      <a href="Privacy.dc.html" class="hide-sm" style="color:#1B1512;text-decoration:none">Privacy</a>
     </div>
-    <a href="Asooke Store.dc.html" style="flex:0 0 auto;text-decoration:none;color:#1B1512;font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;letter-spacing:.34em;padding-left:.34em">ASŌKE</a>
+    <a href="index.dc.html" class="logo" style="flex:0 0 auto;text-decoration:none;color:#1B1512;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:.1em;padding-left:0;white-space:nowrap">ASOKE FASHION</a>
     <div style="flex:1;display:flex;gap:22px;justify-content:flex-end;align-items:center;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase">
       <a href="Shop.dc.html" style="text-decoration:none;color:#5E1B24;font-weight:700">Continue shopping →</a>
     </div>
@@ -56,7 +72,7 @@
 
   <!-- CART (when not placed) -->
   <sc-if value="{{ showCart }}" hint-placeholder-val="{{ true }}">
-    <section style="padding:60px 40px 100px">
+    <section class="cart-sec" style="padding:60px 40px 100px">
       <h1 style="margin:0 0 8px;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(40px,6vw,80px);line-height:.95">Your bag</h1>
       <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;color:#A6773B;text-transform:uppercase;margin-bottom:44px">{{ countLabel }} · made to order · ships in ~3 weeks</div>
 
@@ -68,7 +84,7 @@
       </sc-if>
 
       <sc-if value="{{ hasItems }}" hint-placeholder-val="{{ false }}">
-        <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start">
+        <div class="cart-grid" style="display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start">
           <!-- items -->
           <div style="display:flex;flex-direction:column">
             <sc-for list="{{ items }}" as="it" hint-placeholder-count="0">
@@ -98,7 +114,7 @@
           </div>
 
           <!-- summary + payment -->
-          <div style="position:sticky;top:100px;background:#5E1B24;color:#F4EFE8;padding:36px 32px">
+          <div class="summary" style="position:sticky;top:100px;background:#5E1B24;color:#F4EFE8;padding:36px 32px">
             <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#C89A55;margin-bottom:24px">Order summary</div>
             <div style="display:flex;flex-direction:column;gap:14px;font-family:'Space Mono',monospace;font-size:13px">
               <div style="display:flex;justify-content:space-between"><span style="color:rgba(244,239,232,0.7)">Subtotal</span><span>{{ subtotalStr }}</span></div>
@@ -133,7 +149,7 @@
   </sc-if>
 
   <!-- footer -->
-  <footer style="background:#1B1512;color:#F4EFE8;padding:70px 40px 40px">
+  <footer class="foot" style="background:#1B1512;color:#F4EFE8;padding:70px 40px 40px">
     <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,232,0.55)">
       <span style="font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.26em;color:#F4EFE8">ASOKE FASHION</span>
       <div style="display:flex;gap:26px;flex-wrap:wrap">

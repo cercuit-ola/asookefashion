@@ -11,24 +11,45 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Grotesk:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<title>About Us | Asooke Fashion</title>
+<meta name="description" content="Founded by Olaide Samuel Okediji, Asooke Fashion blends Aṣọ Òkè heritage with contemporary luxury.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+
 <style>
   *{box-sizing:border-box}
   html,body{margin:0}
   body{background:#F4EFE8}
   ::selection{background:#5E1B24;color:#F4EFE8}
+  @media (max-width:820px){
+    .hdr{padding:13px 16px !important}
+    .nav-left{gap:14px !important;font-size:9.5px !important}
+    .nav-left a.hide-sm{display:none !important}
+    .nav-right{gap:13px !important;font-size:9.5px !important}
+    .logo{font-size:13px !important;letter-spacing:.03em !important;padding-left:0 !important}
+    .abt-hero{grid-template-columns:1fr !important;min-height:auto !important}
+    .abt-hero-text{padding:44px 16px 36px !important}
+    .abt-hero-img{min-height:96vw !important;order:-1}
+    .abt-sec{padding:64px 16px !important}
+    .abt-story-cols{grid-template-columns:1fr !important;gap:24px !important}
+    .abt-mission{padding:64px 16px !important}
+    .why-grid{grid-template-columns:1fr !important}
+    .abt-cta{padding:48px 20px !important}
+    .foot{padding:52px 16px 30px !important}
+  }
 </style>
 </helmet>
 
 <div style="background:#F4EFE8;color:#1B1512;font-family:'Space Grotesk',sans-serif;overflow-x:hidden;position:relative;min-height:100vh">
 
   <!-- header -->
-  <header style="position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:20px 40px;background:rgba(244,239,232,0.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(27,21,18,0.12)">
-    <div style="flex:1;display:flex;gap:26px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase">
+  <header class="hdr" style="position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:20px 40px;background:rgba(244,239,232,0.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(27,21,18,0.12)">
+    <div class="nav-left" style="flex:1;display:flex;gap:26px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase">
       <a href="Shop.dc.html" style="color:#1B1512;text-decoration:none">Shop</a>
       <a href="About.dc.html" style="color:#5E1B24;text-decoration:none;font-weight:700">About</a>
-      <a href="Asooke Store.dc.html#story" style="color:#1B1512;text-decoration:none">Lookbook</a>
+      <a href="index.dc.html#story" class="hide-sm" style="color:#1B1512;text-decoration:none">Lookbook</a>
     </div>
-    <a href="Asooke Store.dc.html" style="flex:0 0 auto;text-decoration:none;color:#1B1512;font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;letter-spacing:.34em;padding-left:.34em">ASŌKE</a>
+    <a href="index.dc.html" class="logo" style="flex:0 0 auto;text-decoration:none;color:#1B1512;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:.1em;padding-left:0;white-space:nowrap">ASOKE FASHION</a>
     <div style="flex:1;display:flex;gap:22px;justify-content:flex-end;align-items:center;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase">
       <a href="Privacy.dc.html" style="color:rgba(27,21,18,0.55);text-decoration:none">Privacy</a>
       <a href="Checkout.dc.html" style="text-decoration:none;color:#5E1B24;font-weight:700">Bag</a>
@@ -36,30 +57,30 @@
   </header>
 
   <!-- HERO split -->
-  <section style="display:grid;grid-template-columns:1.05fr 0.95fr;align-items:stretch;min-height:78vh">
-    <div style="display:flex;flex-direction:column;justify-content:center;padding:10vh 5vw 8vh 40px">
+  <section class="abt-hero" style="display:grid;grid-template-columns:1.05fr 0.95fr;align-items:stretch;min-height:78vh">
+    <div class="abt-hero-text" style="display:flex;flex-direction:column;justify-content:center;padding:10vh 5vw 8vh 40px">
       <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.28em;color:#A6773B;text-transform:uppercase;margin-bottom:26px">About us</div>
       <h1 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(44px,6vw,86px);line-height:.96;letter-spacing:-0.01em">Where heritage<br>meets <span style="font-style:italic;color:#5E1B24">contemporary</span><br>luxury.</h1>
       <p style="max-width:460px;margin:32px 0 0;font-size:16px;line-height:1.85;color:rgba(27,21,18,0.74)">At AsookeFashion, we believe African fashion deserves a place on the global stage. Our collections combine the richness of traditional Aṣọ Òkè craftsmanship with clean, modern tailoring — clothing that is timeless, elegant, and effortlessly wearable.</p>
     </div>
-    <div style="position:relative;overflow:hidden;background:#5E1B24;min-height:60vh">
+    <div class="abt-hero-img" style="position:relative;overflow:hidden;background:#5E1B24;min-height:60vh">
       <img src="assets/model-stripe.png" alt="Asooke look" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top">
       <div style="position:absolute;left:18px;bottom:18px;writing-mode:vertical-rl;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.3em;color:rgba(244,239,232,0.9);text-transform:uppercase">Handwoven · Lagos · Worldwide</div>
     </div>
   </section>
 
   <!-- FOUNDER / STORY -->
-  <section style="padding:110px 40px;max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:40px">
+  <section class="abt-sec" style="padding:110px 40px;max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:40px">
     <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.2em;color:#A6773B;text-transform:uppercase;border-bottom:1px solid rgba(27,21,18,0.14);padding-bottom:18px">01 — Our story</div>
     <p style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-style:italic;font-size:clamp(26px,3.4vw,40px);line-height:1.25;max-width:820px">Founded by Olaide Samuel Okediji, an Oyo prince with a deep passion for preserving the rich cultural heritage of the Oyo Kingdom through fashion.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:44px;font-size:15px;line-height:1.85;color:rgba(27,21,18,0.76)">
+    <div class="abt-story-cols" style="display:grid;grid-template-columns:1fr 1fr;gap:44px;font-size:15px;line-height:1.85;color:rgba(27,21,18,0.76)">
       <p style="margin:0">AsookeFashion was created to celebrate African craftsmanship while redefining luxury for the modern woman. Every design is made for women who appreciate premium fabrics, exceptional craftsmanship, and versatile pieces that transition seamlessly from work to weddings, celebrations, travel, and everyday elegance.</p>
       <p style="margin:0">We collaborate with experienced artisans and skilled designers to transform one of Africa’s most iconic textiles into contemporary fashion that celebrates heritage without compromising comfort, sophistication, or quality. From statement dresses and coordinated sets to elegant kaftans, jumpsuits, and occasion wear, every collection reflects confidence, individuality, and timeless style.</p>
     </div>
   </section>
 
   <!-- MISSION band -->
-  <section style="background:#5E1B24;color:#F4EFE8;padding:100px 40px">
+  <section class="abt-mission" style="background:#5E1B24;color:#F4EFE8;padding:100px 40px">
     <div style="max-width:1000px;margin:0 auto">
       <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.24em;color:#C89A55;text-transform:uppercase;margin-bottom:30px">02 — Our mission</div>
       <p style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1.18;max-width:900px">To make authentic African luxury fashion accessible to women around the world — while preserving the beauty, craftsmanship, and legacy of traditional Aṣọ Òkè.</p>
@@ -68,12 +89,12 @@
   </section>
 
   <!-- WHY CHOOSE US -->
-  <section style="padding:110px 40px;max-width:1200px;margin:0 auto">
+  <section class="abt-sec" style="padding:110px 40px;max-width:1200px;margin:0 auto">
     <div style="display:flex;align-items:flex-end;justify-content:space-between;border-bottom:1px solid rgba(27,21,18,0.14);padding-bottom:22px;margin-bottom:56px">
       <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(30px,4vw,52px);line-height:1">Why choose us</h2>
       <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.2em;color:#A6773B">03 — THE DIFFERENCE</div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(27,21,18,0.14);border:1px solid rgba(27,21,18,0.14)">
+    <div class="why-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(27,21,18,0.14);border:1px solid rgba(27,21,18,0.14)">
       <div style="background:#F4EFE8;padding:38px 32px;min-height:220px;display:flex;flex-direction:column">
         <span style="font-family:'Space Mono',monospace;font-size:12px;color:#A6773B">01</span>
         <h3 style="margin:18px 0 12px;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:26px;line-height:1.1">Authentic Aṣọ Òkè craftsmanship</h3>
@@ -108,8 +129,8 @@
   </section>
 
   <!-- CTA -->
-  <section style="padding:0 40px 110px;max-width:1200px;margin:0 auto">
-    <div style="background:#1B1512;color:#F4EFE8;padding:70px 8vw;display:flex;flex-direction:column;align-items:flex-start;gap:24px">
+  <section class="abt-sec" style="padding:0 40px 110px;max-width:1200px;margin:0 auto">
+    <div class="abt-cta" style="background:#1B1512;color:#F4EFE8;padding:70px 8vw;display:flex;flex-direction:column;align-items:flex-start;gap:24px">
       <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(32px,4.4vw,58px);line-height:1.05;max-width:640px">Wear the heritage. Shop the collection.</h2>
       <div style="display:flex;gap:16px;flex-wrap:wrap">
         <a href="Shop.dc.html" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#1B1512;background:#F4EFE8;padding:16px 28px;text-decoration:none">Enter the collection →</a>
@@ -119,13 +140,13 @@
   </section>
 
   <!-- footer -->
-  <footer style="background:#1B1512;color:#F4EFE8;padding:70px 40px 40px">
+  <footer class="foot" style="background:#1B1512;color:#F4EFE8;padding:70px 40px 40px">
     <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,232,0.55)">
       <span style="font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.26em;color:#F4EFE8">ASOKE FASHION</span>
       <div style="display:flex;gap:26px;flex-wrap:wrap">
         <a href="Shop.dc.html" style="color:inherit;text-decoration:none">Shop</a>
         <a href="About.dc.html" style="color:inherit;text-decoration:none">About</a>
-        <a href="Asooke Store.dc.html#story" style="color:inherit;text-decoration:none">Lookbook</a>
+        <a href="index.dc.html#story" style="color:inherit;text-decoration:none">Lookbook</a>
         <a href="Privacy.dc.html" style="color:inherit;text-decoration:none">Privacy Policy</a>
         <a href="https://wa.me/3816357931" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">WhatsApp</a>
       </div>
